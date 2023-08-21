@@ -18,12 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "typeRoots": ["src/@types", "node_modules/@types"],
-    "baseUrl": "src",
+    "baseUrl": "./",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "paths": {
-      "@pages/*": ["components/pages/*"]
+      "@core/*": ["src/components/core/*"],
+      "@pages/*": ["src/components/pages/*"]
     }
   },
-  "include": ["src", "webpack"],
-  "exclude": ["public", "node_modules"]
+  "include": ["src"],
+  "exclude": ["public", "node_modules", "webpack"]
 }

@@ -1,31 +1,41 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'import'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
   ignorePatterns: ['node_modules', 'build', 'webpack'],
   rules: {
+    'arrow-parens': 'warn',
+    'no-console': 'warn',
+    'import/no-unresolved': 'error',
+    'import/order': [
+      'warn',
+      {
+        groups: ['builtin', 'external', 'internal', 'unknown', ['sibling', 'parent', 'index']],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
-    'arrow-parens': 'warn',
-    'import/order': [
-      'warn',
-      {
-        groups: ['external', 'builtin', 'internal', ['parent', 'sibling', 'index']],
-      },
-    ],
-    'no-console': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        project: './tsconfig.json',
+      },
     },
   },
   env: {
