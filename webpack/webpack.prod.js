@@ -1,7 +1,7 @@
 const { resolve } = require('path')
 const { merge } = require('webpack-merge')
 const CompressionPlugin = require('compression-webpack-plugin')
-const { ESBuildMinifyPlugin } = require('esbuild-loader')
+const { EsbuildPlugin } = require('esbuild-loader')
 const config = require('./webpack.config')
 
 module.exports = merge(config, {
@@ -15,7 +15,7 @@ module.exports = merge(config, {
   optimization: {
     minimize: true,
     minimizer: [
-      new ESBuildMinifyPlugin({
+      new EsbuildPlugin({
         target: 'es2015',
       }),
     ],
