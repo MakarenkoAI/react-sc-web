@@ -1,0 +1,51 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.tabs {
+  display: flex;
+
+  margin-bottom: 24px;
+}
+
+.tab {
+  border: 3px solid transparent;
+  cursor: pointer;
+
+  transition: all 0.1s ease 0s;
+
+  &_notSelected {
+    &:hover {
+      background: $smoky-white;
+      border-radius: 10px;
+    }
+
+    &:active {
+      border: 4px solid $border-grey;
+    }
+  }
+
+  &_selected::after {
+    content: '';
+    display: block;
+    
+    width: auto;
+    border-bottom: 3px solid $navy-blue;
+  }
+
+  &Wrapper {
+    padding: 5px 7px;
+    border: 3px solid transparent;
+  }
+
+  &Label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: $dull-grey;
+
+    &_selected {
+      color: $dark-grey;
+    }
+  }
+}

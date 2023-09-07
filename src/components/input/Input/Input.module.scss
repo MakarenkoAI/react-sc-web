@@ -1,0 +1,146 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9px;
+
+  width: 100%;
+  height: 40px;
+  
+  padding: 8px 16px;
+
+  border: 2px solid $border-white;
+  border-radius: 10px;
+
+  outline: none;
+  cursor: text;
+  
+  background-color: $white;
+
+  &:hover {
+    border-color: $dark-blue;
+  }
+
+  &_focused {
+    border-color: $dark-blue;
+
+    &:hover {
+      border-color: $dark-blue;
+    }
+  }
+
+  &_error {
+    border-color: $error-message;
+
+    &:hover {
+      border-color: $red;
+    }
+  }
+
+  &_disabled {
+    background-color: $beige;
+    border-color: $border-disabled;
+
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.search {
+  width: 415px;
+  height: 40px;
+
+  border: 1px solid $white;
+  border-radius: 10px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: $dark-grey;
+
+  &:hover, &_focused {
+    border: 1px solid $grey-blue;
+  }
+
+  &::placeholder {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: $dull-grey;
+  }
+
+  &_disabled {
+    color: $silver;
+  }
+}
+
+.input {
+  flex-grow: 1;
+
+  padding: 0;
+  min-width: 0;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  border: none;
+  outline: none;
+
+  color: $dark-grey;
+
+  &::placeholder {
+    color: $dull-grey;
+    font-weight: 300;
+  }
+
+  &_disabled {
+    background-color: $beige;
+    color: $dull-grey;
+
+    cursor: default;
+  }
+}
+
+.hidePasswordSvg {
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.showPasswordSvg {
+  flex-shrink: 0;
+
+  padding: 0px 1px;
+
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.leftIcon {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightIcon {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}

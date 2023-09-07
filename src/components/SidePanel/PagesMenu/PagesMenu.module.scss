@@ -1,0 +1,32 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.pagesMenu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  width: calc(100% + 26px);
+
+  height: fit-content;
+
+  padding: 4px 0 4px 28px;
+  margin-left: -26px;
+
+  background: transparent;
+
+  border-radius: 4px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: $dark-grey;
+
+  cursor: pointer;
+
+  &:hover {
+    background: $soft-grey;
+  }
+}

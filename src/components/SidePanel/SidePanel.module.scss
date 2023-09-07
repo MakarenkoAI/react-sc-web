@@ -1,0 +1,126 @@
+@import '~@assets/styles/mixins.scss';
+@import '~@assets/styles/services.scss';
+@import '~@assets/styles/variables/colors.scss';
+
+.logo {
+  max-height: 28px;
+  height: 100%;
+  max-width: 302px;
+  width: 100%;
+
+  margin-bottom: 62px;
+
+  cursor: pointer;
+
+  @media (max-width: 1919px) {
+    padding-right: 24px;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  color: $dull-grey;
+
+  width: 120px;
+  height: 39px;
+
+  padding: 8px;
+  margin-left: -6px;
+  margin-bottom: 24px;
+
+  border-radius: 10px;
+  background: $beige;
+
+  &:hover {
+    background: $smoky-white;
+  }
+}
+
+.searchFieldWrap {
+  margin-right: 24px;
+}
+
+.searchField {
+  margin-bottom: 24px;
+  margin-left: -6px;
+
+  width: 100%;
+  min-height: 40px;
+
+  border: 1px solid $white;
+
+  &:hover {
+    border: 1px solid $grey-blue;
+  }
+
+  &_disabled {
+    color: silver;
+  }
+}
+
+.pagesMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-bottom: 51px;
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+
+  height: calc(100vh - $logoSearchHeight);
+
+  margin-bottom: 24px;
+
+  @include scrollable;
+
+  overflow-x: hidden;
+
+  &_userCanEdit {
+    height: calc(100vh - $logoSearchCreateRequestsHeight);
+  }
+
+  &_admin {
+    height: calc(100vh - $logoSearchPagesMenuHeight);
+  }
+}
+
+.plusWrapper {
+  position: fixed;
+  left: 403px;
+  top: 335px;
+  padding: 10px;
+  z-index: 100;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+
+  &:hover {
+    background: #{$soft-grey};
+  }
+}
+
+.errorBoundary {
+  margin: 16px 0 0;
+}
+
+.icon {
+  overflow: visible;
+  flex-basis: 24px;
+}

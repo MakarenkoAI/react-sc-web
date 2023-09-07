@@ -27,6 +27,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'prettier/prettier': 'warn',
   },
   settings: {
     'import/parsers': {
@@ -46,4 +48,4 @@ module.exports = {
   globals: {
     window: true,
   },
-}
+};

@@ -1,0 +1,119 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  color: $dirty-grey;
+
+  cursor: pointer;
+
+  &_disabled {
+    cursor: auto;
+  }
+}
+
+.customCheckbox {
+  position: relative;
+  box-sizing: border-box;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 5px;
+
+  flex-shrink: 0;
+
+  border: 2px solid $navy-blue;
+
+  &::before {
+    background-color: $navy-blue;
+  }
+
+  &.customCheckbox_disabled {
+    border-color: $silver;
+    color: $silver;
+
+    cursor: auto;
+
+    &::before {
+      background-color: $silver;
+      cursor: auto;
+    }
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    border-radius: 4px;
+
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+    transition: all ease 0.2s;
+
+    opacity: 0;
+  }
+}
+
+.checkbox {
+  &:checked ~ .customCheckbox {
+    border-color: $navy-blue;
+  }
+
+  &:checked ~ .customCheckbox_disabled {
+    border-color: $silver;
+  }
+
+  &:checked ~ .customCheckbox::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  &:checked ~ .customCheckbox .checkMark {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+}
+
+.checkMark {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &_disabled {
+    cursor: auto;
+  }
+}
+
+.label {
+  font-family: 'Roboto';
+  font-size: 22px;
+  line-height: 26px;
+
+  &_grey {
+    color: $beige-grey;
+  }
+}

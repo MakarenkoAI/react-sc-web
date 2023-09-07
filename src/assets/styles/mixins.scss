@@ -1,0 +1,38 @@
+@import '~@assets/styles/variables/colors.scss';
+
+@mixin scrollable {
+  margin-right: 6px;
+  cursor: auto;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    margin: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $silver;
+    margin: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+}
+
+@mixin blink {
+  animation: blink 0.6s ease-in-out infinite alternate both;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+}

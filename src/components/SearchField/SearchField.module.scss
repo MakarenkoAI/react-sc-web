@@ -1,0 +1,9 @@
+@import '~@assets/styles/services.scss';
+
+.option {
+  border-bottom: 1px solid $light-grey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,23 @@
+.scg {
+  position: absolute;
+  width: calc(100vw - 487px);
+  height: calc(100vh - 80px - 36px);
+  top: 116px;
+  right: 0;
+  z-index: 5;
+}
+
+.boundary {
+  position: absolute;
+  left: 480px;
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width: 1365px) {
+  .scg {
+    width: calc(75% - 10px);
+  }
+}

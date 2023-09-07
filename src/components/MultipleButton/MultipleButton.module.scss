@@ -1,0 +1,72 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.multiplyButton {
+  position: relative;
+
+  width: fit-content;
+
+  &_disabled {
+    pointer-events: none;
+  }
+}
+
+.button.button {
+  padding: 8px 16px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  color: $dark-grey;
+
+  &_active {
+    background-color: $smoky-white;
+  }
+
+  &_disabled {
+    color: $silver;
+  }
+
+  &:hover {
+    color: $dark-grey;
+  }
+}
+
+.dropdown {
+  width: fit-content;
+
+  background: $white;
+
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+  z-index: 100;
+
+  align-self: flex-end;
+
+  margin-right: 0;
+}
+
+.option {
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $smoky-white;
+  }
+}
+
+.chevronDown {
+  transition: all 0.3s ease;
+
+  &_revert {
+    transform: rotate(180deg);
+  }
+
+  &_disabled {
+    path {
+      fill: $silver;
+    }
+  }
+}

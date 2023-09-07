@@ -1,0 +1,23 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.checkbox {
+  margin-right: 8px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.option {
+  &_disabled {
+    pointer-events: none;
+    cursor: text;
+  }
+  &_selected {
+    background-color: $blue;
+    &:hover {
+      background-color: $sky-blue;
+    }
+  }
+  &_active {
+    background-color: $smoky-white;
+  }
+}

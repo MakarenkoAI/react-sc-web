@@ -1,0 +1,17 @@
+@import '~@assets/styles/variables/colors.scss';
+@import '~@assets/styles/services.scss';
+@import '~@assets/styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: $mainContentHeight;
+}
+
+.switch {
+  position: absolute;
+  right: 24px;
+  top: 0;
+  z-index: 5;
+}

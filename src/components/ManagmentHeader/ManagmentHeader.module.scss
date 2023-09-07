@@ -1,0 +1,46 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+
+  width: fit-content;
+  height: fit-content;
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: $dark-grey;
+  }
+}
+
+.backArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $soft-grey;
+  }
+}

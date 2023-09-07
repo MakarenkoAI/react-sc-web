@@ -1,0 +1,48 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.iconButton {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  path {
+    transition: all ease 0.3s;
+  }
+
+  &:hover {
+    path {
+      fill: #7e7256;
+    }
+  }
+
+  &_squared {
+    border-radius: 10px;
+
+    &:hover {
+      background: #{$soft-grey};
+    }
+  }
+
+  &_l {
+    width: 36px;
+    height: 36px;
+  }
+
+  &_m {
+    width: 24px;
+    height: 24px;
+  }
+
+  &_s {
+    width: 16px;
+    height: 16px;
+  }
+
+  &_disabled {
+    pointer-events: none;
+  }
+}

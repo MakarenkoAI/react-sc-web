@@ -1,0 +1,39 @@
+@import '~@assets/styles/variables/colors.scss';
+
+.wrap {
+  margin: 32px 14px 0 32px;
+}
+
+.managmentWrap {
+  margin: 16px 154px;
+}
+
+.wrap h4 {
+  font-weight: 600;
+  font-size: 24px;
+
+  color: $dull-grey;
+
+  margin: 0;
+}
+
+.wrap p {
+  margin: 8px 0;
+
+  font-weight: 400;
+  font-size: 20px;
+
+  color: $dark-grey;
+}
+
+.backButton.backButton {
+  width: fit-content;
+
+  margin-top: 32px;
+
+  gap: 13px;
+
+  position: relative;
+
+  z-index: 1;
+}

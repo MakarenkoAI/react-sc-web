@@ -1,0 +1,53 @@
+@import '~@assets/styles/variables/colors.scss';
+@import '~@assets/styles/mixins.scss';
+
+.historyPanelWrap {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+
+  margin-top: 16px;
+}
+
+.historyList {
+  width: 350px;
+  height: calc(100vh - 80px - 68px);
+
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  padding-top: 30px;
+
+  padding-right: 12px;
+  animation: fadeInFromTop 0.3s ease both;
+  &_closing {
+    animation: 0.3s ease-in-out both fadeOutToTop;
+  }
+}
+
+.historyBtn {
+  margin-bottom: 12px;
+  padding: 8px 10px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+
+  cursor: pointer;
+
+  color: $dark-grey;
+
+  &:hover {
+    background-color: $decomposition-hover;
+    border-radius: 4px;
+  }
+}
+
+.historyBtnActive {
+  background-color: $decomposition-hover;
+  border-radius: 4px;
+}

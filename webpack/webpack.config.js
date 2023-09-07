@@ -1,17 +1,17 @@
-const { resolve } = require('path')
-require('dotenv').config()
-const { EnvironmentPlugin } = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
+const { resolve } = require('path');
+require('dotenv').config();
+const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
     app: './src/index.tsx',
   },
   plugins: [
-    new EnvironmentPlugin(['API_URL']),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
@@ -35,15 +35,23 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        include: resolve(__dirname, 'src/assets'),
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        // include: resolve(__dirname, 'src/assets'),
         type: 'asset/resource',
+      },
+      {
+        test: /\.scss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /.svg$/,
+        use: ['@svgr/webpack'],
       },
     ],
   },
   resolve: {
     symlinks: false,
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.scss', '.css'],
     plugins: [new TsconfigPathsPlugin()],
   },
   optimization: {
@@ -51,4 +59,4 @@ module.exports = {
       chunks: 'async',
     },
   },
-}
+};
