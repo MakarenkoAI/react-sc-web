@@ -4,6 +4,7 @@ import { SidePanel } from '@components/SidePanel';
 import { SidePanelWrapper } from '@components/SidePanelWrapper';
 
 import styles from './Layout.module.scss';
+import { Language } from '@components/Language';
 
 export interface IProps {
   children?: ReactNode;
@@ -12,7 +13,9 @@ export interface IProps {
 export const Layout: FC<IProps> = ({ children }) => {
   return (
     <div className={styles.root}>
-      <header className={styles.header} />
+      <header className={styles.header}>
+        <Language />
+      </header>
       <SidePanelWrapper>
         <SidePanel className={styles.sideBar} />
       </SidePanelWrapper>
