@@ -14,6 +14,7 @@ export const doCommand = (cmdAddr: number, ...args: number[]) => {
     }),
     {} as Record<string, string>,
   );
+
   return request<IDoComandResult>({
     method: 'POST',
     url: `${API_URL}/api/cmd/do/`,

@@ -6,7 +6,8 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 const IS_PROD = process.env.NODE_ENV === 'production';
 
 const defaultBasePath = IS_DEV ? undefined : '/react';
-const defaultApiUrl = IS_PROD ? process.env.API_URL : '';
+// const defaultApiUrl = IS_PROD ? process.env.API_URL : '';
+const defaultApiUrl = IS_DEV ? process.env.API_URL : '';
 
 export const BASE_PATH = process.env.BASE_PATH ?? defaultBasePath;
 export const SC_URL = process.env.SC_URL!;

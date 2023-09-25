@@ -3,8 +3,18 @@ import { createRoot } from 'react-dom/client';
 import { App } from '@components/App';
 import { Provider } from 'react-redux';
 import { store } from '@store/index';
-import { TLanguage } from 'ostis-ui-lib';
-import { LanguageProvider } from '@components/Language/LanguageProvider';
+import {
+  LanguageProvider,
+  ClientProvider,
+  ScUtilsProvider,
+  TLanguage,
+  ToastProvider,
+} from 'ostis-ui-lib';
+
+import './assets/styles/index.scss';
+import { client } from './api';
+import { BrowserRouter } from 'react-router-dom';
+import { BASE_PATH } from '@constants';
 
 const element = document.getElementById('root')!;
 const root = createRoot(element);
@@ -20,7 +30,15 @@ root.render(
   <StrictMode>
     <LanguageProvider defaultLanguage={getDefaultLanguage()}>
       <Provider store={store}>
-        <App />
+        <BrowserRouter basename={BASE_PATH}>
+          <ClientProvider client={client}>
+            <ScUtilsProvider>
+              <ToastProvider>
+                <App />
+              </ToastProvider>
+            </ScUtilsProvider>
+          </ClientProvider>
+        </BrowserRouter>
       </Provider>
     </LanguageProvider>
   </StrictMode>,

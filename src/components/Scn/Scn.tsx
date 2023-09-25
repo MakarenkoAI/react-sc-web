@@ -89,6 +89,7 @@ export const Scn = ({ question }: IProps) => {
   const requestScn = useCallback(async () => {
     setTimeout();
     const scnRes = await getScnTree(question, onRequestStarted);
+
     if (!scnRes) {
       setTree(null);
       setIsLoading(false);

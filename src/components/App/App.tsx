@@ -13,7 +13,7 @@ import { addArg, selectArgs, store } from '@store/index';
 export const App = () => {
   const [isReady, setIsReady] = useState(false);
 
-  // const { goToActiveFormatCommand } = useScNavigation();
+  const { goToActiveFormatCommand } = useScNavigation();
 
   const { addrOrSystemIdAddr } = useScUtils();
 
@@ -24,8 +24,7 @@ export const App = () => {
   const translate = useTranslate();
 
   const onExecuteCommand = useCallback((addr?: number | string, command?: number | string) => {
-    //@ts-ignore
-    // goToActiveFormatCommand(addr || DEFAULT_SYSTEM_ID, command || DEFAULT_COMMAND_SYSTEM_ID);
+    goToActiveFormatCommand(addr || DEFAULT_SYSTEM_ID, command || DEFAULT_COMMAND_SYSTEM_ID);
   }, []);
 
   const onFixArgument = async (addr?: number | string) => {
