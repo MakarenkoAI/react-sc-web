@@ -25,20 +25,28 @@ const Main = () => {
 
   const dispatch = useDispatch();
 
-  const activeTab = location.pathname.includes('scn') ? 'scn' : 'scg';
+  const activeTab = location.pathname.includes('scg') ? 'scg' : 'scn';
 
   const onChange = (newActiveTab: TScLanguageTab) => {
     dispatch(setFormat(newActiveTab));
+
     if (commandMatch) {
       const { commandAddr, addr } = commandMatch.params;
-      if (!commandAddr || !addr) return;
+      if (!commandAddr || !addr) {
+        return;
+      }
       return navigate(generatePath(routes.COMMAND, { commandAddr, addr, format: newActiveTab }));
     }
 
-    if (!questionMatch) return;
+    if (!questionMatch) {
+      return;
+    }
+
     const { question } = questionMatch.params;
 
-    if (!question) return;
+    if (!question) {
+      return;
+    }
     navigate(generatePath(routes.QUESTION, { question, format: newActiveTab }));
   };
 
