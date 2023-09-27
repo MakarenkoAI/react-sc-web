@@ -83,7 +83,7 @@ const getLinks = (): IScnChild => ({
   linkedNodes: [
     {
       addr: getId(),
-      content: 'База знаний Financial DK',
+      content: 'База знаний',
       contentType: null,
       sourceNode: null,
       targetNode: null,
@@ -93,7 +93,7 @@ const getLinks = (): IScnChild => ({
     },
     {
       addr: getId(),
-      content: 'Financial DK knowledge base',
+      content: 'Knowledge base',
       contentType: null,
       sourceNode: null,
       targetNode: null,
@@ -252,7 +252,7 @@ const decompositionChild: IScnChild = {
 
 export const tree1: IScnNode = {
   addr: getId(),
-  idtf: 'База знаний Financial DK',
+  idtf: 'База знаний',
   type: ScType.NodeConst.value,
   content: null,
   contentType: null,
@@ -451,7 +451,7 @@ export const tree1: IScnNode = {
 
 export const tree2: IScnNode = {
   addr: getId(),
-  idtf: 'База знаний Financial DK',
+  idtf: 'База знаний',
   type: ScType.LinkConst.value,
   content: 'Контент ссылки',
   contentType: null,
@@ -486,7 +486,7 @@ export const tree2: IScnNode = {
 
 export const tree3: IScnNode = {
   addr: getId(),
-  idtf: 'База знаний Financial DK',
+  idtf: 'База знаний',
   content: null,
   sourceNode: {
     addr: getId(),
@@ -531,7 +531,7 @@ export const tree3: IScnNode = {
 
 export const tree4: IScnNode = {
   addr: getId(),
-  idtf: 'База знаний Financial DK',
+  idtf: 'База знаний',
   content: null,
   sourceNode: {
     addr: getId(),

@@ -28,8 +28,8 @@ interface IInitialState {
 const initialState: IInitialState = {
   format: 'scn',
   user: {
-    data: localStorage.getItem('FDK_user')
-      ? JSON.parse(localStorage.getItem('FDK_user') as string)
+    data: localStorage.getItem('user')
+      ? JSON.parse(localStorage.getItem('user') as string)
       : null,
     status: {
       isLoading: false,
@@ -83,14 +83,14 @@ export const commonSlice = createSlice({
         state.user.status.isLoadingByToken = true;
       })
       .addCase(fetchUserByToken.fulfilled, (state, action) => {
-        localStorage.setItem('FDK_user', JSON.stringify(action.payload));
+        localStorage.setItem('user', JSON.stringify(action.payload));
 
         state.user.data = action.payload;
         state.user.status.isError = false;
         state.user.status.isLoading = false;
       })
       .addCase(fetchUserByToken.rejected, (state) => {
-        localStorage.removeItem('FDK_user');
+        localStorage.removeItem('user');
         deleteCookie('session_key');
 
         state.user.status.isLoading = false;
@@ -102,14 +102,14 @@ export const commonSlice = createSlice({
         state.user.status.isLoading = true;
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
-        localStorage.setItem('FDK_user', JSON.stringify(action.payload));
+        localStorage.setItem('user', JSON.stringify(action.payload));
 
         state.user.data = action.payload as IUserData;
         state.user.status.isError = false;
         state.user.status.isLoading = false;
       })
       .addCase(fetchUser.rejected, (state) => {
-        localStorage.removeItem('FDK_user');
+        localStorage.removeItem('user');
         deleteCookie('session_key');
 
         state.user.status.isLoading = false;

@@ -6,7 +6,7 @@ import { deleteCookie } from '@utils';
 export const interceptorsInit = () => {
   axios.interceptors.response.use(undefined, (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('FDK_user');
+      localStorage.removeItem('user');
       deleteCookie('session_key');
       store.dispatch(setUser(null));
       store.dispatch(
