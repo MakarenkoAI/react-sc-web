@@ -1,8 +1,8 @@
-import { Scg as UiKitScg, useToast } from 'ostis-ui-lib';
-import { FC, useCallback } from 'react';
+import { Scg as UiKitScg, useLanguage, useToast } from 'ostis-ui-lib';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { removeFromCache } from '@api/requests/scn';
 import { Notification } from '@components/Notification';
-import { scgUrl } from '@constants';
+import { API_URL, routes, scgUrl } from '@constants';
 import { useScNavigation } from '@hooks/useScNavigation';
 
 interface IProps {
@@ -14,6 +14,10 @@ interface IProps {
 export const Scg: FC<IProps> = ({ question, className, show = false }) => {
   const { goToActiveFormatCommand } = useScNavigation();
   const { addToast } = useToast();
+
+  const [isReady, setIsready] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const ref = useRef<HTMLIFrameElement>(null);
 
   const onUpdateScg = useCallback(() => {
     if (question) removeFromCache(question);
@@ -57,6 +61,28 @@ export const Scg: FC<IProps> = ({ question, className, show = false }) => {
       },
     );
   }, [addToast]);
+
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   const iframe = ref.current;
+  //   if (!iframe) return setIsLoading(false);
+  //   (iframe.contentWindow as any).onInitializationFinished = () => {
+  //     setIsready(true);
+  //   };
+
+  //   // iframe.contentWindow?.addEventListener('DOMContentLoaded', () => {
+  //   //   iframe.contentDocument?.addEventListener('click', onClose);
+  //   //   iframe.contentDocument?.addEventListener('contextmenu', onContextMenu);
+  //   //   setTimeout(() => setIsLoading(false), 800);
+  //   // });
+  // }, []);
+
+  // useEffect(() => {
+  //   if (!isReady || !show || !question) return;
+  //   const iframe = ref.current;
+  //   if (!iframe) return;
+  //   (iframe.contentWindow as any).renderScg?.(question);
+  // }, [isReady, question, show]);
 
   return (
     <UiKitScg
