@@ -32,7 +32,7 @@ export const defaultValues = {
   xmlData: '',
 };
 
-// export const scgUrl = IS_DEV ? `${API_URL}/iframe/scg` : `${API_URL}/scg`;
+export const scgUrl = IS_DEV ? `${API_URL}/scg` : `${API_URL}/scg`;
 
 // export const scgUrl = `${API_URL}?sys_id=section_type_purpose_and_structure_of_IMS&scg_structure_view_only=true&lang=lang_en`;
-export const scgUrl = `${API_URL}?sys_id=section_type_purpose_and_structure_of_IMS&scg_structure_view_only=false&lang=lang_ru`;
+// export const scgUrl = `${API_URL}?sys_id=section_type_purpose_and_structure_of_IMS&scg_structure_view_only=false&lang=lang_ru`;
